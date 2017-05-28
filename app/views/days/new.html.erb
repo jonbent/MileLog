@@ -1,0 +1,11 @@
+<h3>Add your Mileage for Today</h3>
+
+<%= form_for [current_user, @day] do | f | %>
+
+<%= f.label 'Miles Driven:' %>
+<%= f.text_field :miles %>
+<br>
+<%= f.submit %>
+<% end %>
+
+<%= link_to 'cancel', user_days_path(current_user) %>

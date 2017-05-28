@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  date_spent: 2017-05-28
+  purchase_amount: 9.99
+
+two:
+  type: 
+  date_spent: 2017-05-28
+  purchase_amount: 9.99

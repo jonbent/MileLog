@@ -1,0 +1,7 @@
+<h2>Your days driven</h2>
+<% current_user.days.each do |day| %>
+  <p><%= day.miles %></p>
+  <p><%= day.created_at %></p>
+  <p><%= button_to 'delete', user_day_path(current_user, day), method: :delete %></p>
+<% end %>
+<%= link_to 'New Mileage', new_user_day_url(current_user) %>

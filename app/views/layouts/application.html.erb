@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MilesLog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <%= link_to current_user.username, user_path(current_user), class: 'brand-logo right' %>
+        <ul id="nav-mobile" class="left">
+          <li><%= link_to 'Days Drvn', user_days_path(current_user) %></li>
+          <li><%= link_to 'Paydays', user_paydays_path(current_user) %></li>
+          <li><%= link_to 'Expenditures', user_expenditures_path(current_user) %></li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

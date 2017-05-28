@@ -1,0 +1,25 @@
+<h4>Add a Payday</h4>
+<div class="row">
+
+  <%= form_for [current_user, @payday], class: 'col s12' do |f| %>
+    <div class='row'>
+      <div class='input-field col s6'>
+        <%= f.label :amount %>
+        <br>
+        <%= f.number_field :amount, id: 'amount', class: 'validate', placeholder: 'Total Paycheck Amount', step: 0.01 %>
+      </div>
+      <div class='input-field col s6'>
+        <%= f.label :amount_back %>
+        <br>
+        <%= f.number_field :amount_back, id: 'amount_back', class: 'validate', placeholder: 'Amount Paid Back in Reimbursment', step: 0.01 %>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.label :paydate %>
+      <div class="input-field col s12">
+        <%= f.date_field :paydate, class: 'datepicker validate', type: 'date' %>
+      </div>
+    </div>
+    <%= f.submit class:'btn waves-effect waves-light' %>
+  <% end %>
+</div>

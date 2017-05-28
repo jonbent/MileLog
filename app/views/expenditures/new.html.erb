@@ -1,0 +1,25 @@
+<h4>Add an Expenditure</h4>
+<div class="row">
+
+  <%= form_for [current_user, @expenditure], class: 'col s12' do |f| %>
+    <div class='row'>
+      <div class='input-field col s6'>
+        <%= f.label :type %>
+        <br>
+        <%= f.text_field :type, id: 'type', class: 'validate', placeholder: 'What did you spend your money on'%>
+      </div>
+      <div class='input-field col s6'>
+        <%= f.label :amount_back %>
+        <br>
+        <%= f.number_field :purchase_amount, id: 'purchase_amount', class: 'validate', placeholder: 'How Much did you pay', step: 0.01 %>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.label :date_spent %>
+      <div class="input-field col s12">
+        <%= f.date_field :date_spent, class: 'datepicker validate', type: 'date' %>
+      </div>
+    </div>
+    <%= f.submit class:'btn waves-effect waves-light' %>
+  <% end %>
+</div>

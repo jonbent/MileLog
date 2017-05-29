@@ -1,7 +1,19 @@
-<%= form_tag("/login", method: "post", class: "form") do %>
-  <%= label_tag :user, 'Username:' %><br>
-  <%= text_field_tag :username %><br>
-  <%= label_tag :password, 'Password:' %><br>
-  <%= password_field_tag :password %><br>
-  <%= submit_tag 'Login' %>
-<% end %>
+<div class='row'>
+  <div class='col s12'>
+    <%= form_tag("/login", method: "post", class: "form") do %>
+      <div class='row'>
+        <div class='input-field col s12'>
+          <%= text_field_tag :username, nil, placeholder: 'Enter Username', required: true, id: 'username', class: 'validate' %><br>
+          <%= label_tag :user, 'Username:', for: 'username' %><br>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='input-field col s12'>
+        <%= password_field_tag :password, nil, placeholder: 'Enter Password',  required: true, id: 'password', class: 'validate' %><br>
+        <%= label_tag :password, 'Password:', for: 'password' %><br>
+      </div>
+    </div>
+      <%= submit_tag 'Login', class: 'btn waves-effect waves-light wide' %>
+    <% end %>
+  </div>
+</div>

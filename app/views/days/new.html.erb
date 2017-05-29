@@ -17,6 +17,8 @@
         <%= f.date_field :date_driven, class: 'datepicker validate', type: 'date' %>
       </div>
     </div>
-    <%= f.submit class:'btn waves-effect waves-light wide' %>
+    <%= f.submit class:'btn waves-effect waves-light wide' do %>
+    <span>Create Day</span>
+    <% end %>
   <% end %>
 </div>

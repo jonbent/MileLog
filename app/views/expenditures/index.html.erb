@@ -24,4 +24,6 @@
   <% end %>
 </div>
 
-<%= link_to 'New Business Expenditure', new_user_expenditure_path(current_user), class: 'waves-effect waves-light btn-large wide' %>
+<%= link_to new_user_expenditure_path(current_user), class: 'waves-effect waves-light btn-large wide' do %>
+  <span>New Business Expenditure</span>
+<% end %>

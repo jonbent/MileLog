@@ -23,4 +23,7 @@
     </div>
   <% end %>
 </div>
-<%= link_to 'New Payday', new_user_payday_path(current_user), class: 'waves-effect waves-light btn-large wide' %>
+
+<%= link_to new_user_payday_path(current_user), class: 'waves-effect waves-light btn-large wide' do %>
+  <span>New Payday</span>
+<% end %>

@@ -1,2 +1,27 @@
-<h5><%= current_user.username %>'s Expenditures</h5>
-<%= link_to 'New Business Expenditure', new_user_expenditure_path(current_user) %>
+<h5><%= current_user.username %>'s Expenses</h5>
+<div class='row'>
+
+  <% current_user.expenditures.each do |expenditure| %>
+    <div class="col s12 m6">
+      <div class='card'>
+        <div class='card-content'>
+          <span class='card-title'>
+            <% if !expenditure.date_spent %>
+              <%= expenditure.created_at.strftime("%B %d, %Y") %>
+            <% else %>
+              <%= expenditure.date_spent.strftime("%B %d, %Y") %>
+            <% end %>
+          </span>
+          Purchase Amount: $<%= expenditure.purchase_amount %>
+          <br>
+          Spent on: <%= expenditure.kind %>
+        </div>
+        <div class='card-action'>
+          <%= button_to 'delete', user_expenditure_path(current_user, expenditure), method: :delete, class:'btn waves-effect waves-light' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Business Expenditure', new_user_expenditure_path(current_user), class: 'waves-effect waves-light btn-large wide' %>

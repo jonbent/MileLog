@@ -4,14 +4,14 @@
   <%= form_for [current_user, @expenditure], class: 'col s12' do |f| %>
     <div class='row'>
       <div class='input-field col s6'>
-        <%= f.label :type %>
+        <%= f.label :kind %>
         <br>
-        <%= f.text_field :type, id: 'type', class: 'validate', placeholder: 'What did you spend your money on'%>
+        <%= f.text_field :kind, id: 'kind', class: 'validate', placeholder: 'What did you spend your money on', required: true%>
       </div>
       <div class='input-field col s6'>
-        <%= f.label :amount_back %>
+        <%= f.label :purchase_amount %>
         <br>
-        <%= f.number_field :purchase_amount, id: 'purchase_amount', class: 'validate', placeholder: 'How Much did you pay', step: 0.01 %>
+        <%= f.number_field :purchase_amount, id: 'purchase_amount', class: 'validate', placeholder: 'How Much did you pay', step: 0.01, required: true %>
       </div>
     </div>
     <div class="row">
@@ -20,6 +20,6 @@
         <%= f.date_field :date_spent, class: 'datepicker validate', type: 'date' %>
       </div>
     </div>
-    <%= f.submit class:'btn waves-effect waves-light' %>
+    <%= f.submit class:'btn waves-effect waves-light wide' %>
   <% end %>
 </div>

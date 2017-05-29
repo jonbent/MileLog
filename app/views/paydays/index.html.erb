@@ -1,3 +1,26 @@
-<h3><%= current_user.username %>'s Paydays</h3>
+<h5><%= current_user.username %>'s Paydays</h5>
+<div class='row'>
 
-<%= link_to 'New Payday', new_user_payday_path(current_user) %>
+  <% current_user.paydays.each do |payday| %>
+    <div class="col s12 m6">
+      <div class='card'>
+        <div class='card-content'>
+          <span class='card-title'>
+            <% if !payday.paydate %>
+              <%= payday.created_at.strftime("%B %d, %Y") %>
+            <% else %>
+              <%= payday.paydate.strftime("%B %d, %Y") %>
+            <% end %>
+          </span>
+          Total Pay: $<%= payday.amount %>
+          <br>
+          Reimbursed: $<%= !payday.amount_back ? 0 : payday.amount_back %>
+        </div>
+        <div class='card-action'>
+          <%= button_to 'delete', user_payday_path(current_user, payday), method: :delete, class:'btn waves-effect waves-light' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to 'New Payday', new_user_payday_path(current_user), class: 'waves-effect waves-light btn-large wide' %>

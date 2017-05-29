@@ -1,7 +1,7 @@
 class DaysController < ApplicationController
 
   def index
-    @days = Day.all
+    @days = current_user.days.all
   end
 
   def new
@@ -26,6 +26,6 @@ class DaysController < ApplicationController
   private
 
   def day_params
-    params.require(:day).permit(:miles)
+    params.require(:day).permit(:miles, :date_driven)
   end
 end

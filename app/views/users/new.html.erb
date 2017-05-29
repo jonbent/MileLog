@@ -4,14 +4,26 @@
     <%= form_for @user do |f| %>
       <div class='row'>
         <div class='input-field col s12'>
-          <%= f.text_field :username, required: true, placeholder:'Enter Username', id: 'username', class: 'validate' %>
           <%= f.label :username, for: 'username'%>
+          <br>
+          <%= f.text_field :username, required: true, placeholder:'Enter Username', id: 'username', class: 'validate' %>
+        </div>
+        <div class='col s12'>
+          <% if @user.errors.size != 0 %>
+            <%= @user.errors.full_messages_for(:username)[0] %>
+          <% end %>
         </div>
       </div>
       <div class='row'>
         <div class='input-field col s12'>
-          <%= f.email_field :email, required: true, placeholder:'Enter Email', id: 'email', class: 'validate' %>
           <%= f.label :email, for: 'email' %>
+          <br>
+          <%= f.email_field :email, required: true, placeholder:'Enter Email', id: 'email', class: 'validate' %>
+        </div>
+        <div class='col s12'>
+          <% if @user.errors.size != 0 %>
+            <%= @user.errors.full_messages_for(:email)[0] %>
+          <% end %>
         </div>
       </div>
       <div class='row'>

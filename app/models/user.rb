@@ -33,6 +33,21 @@ class User < ApplicationRecord
     end
     total
   end
+  def years_miles
+    total = 0
+    self.days.each do |day|
+      if day.date_driven
+        if day.date_driven.year == Date.today.year
+          total += day.miles
+        end
+      else
+        if day.created_at.year == Date.today.year
+          total += day.miles
+        end
+      end
+    end
+    total
+  end
 
   def total_pay
     total = 0
@@ -50,6 +65,21 @@ class User < ApplicationRecord
         end
       else
         if payday.created_at.month == Date.today.month
+          total += payday.amount
+        end
+      end
+    end
+    total
+  end
+  def years_pay
+    total = 0
+    self.paydays.each do |payday|
+      if payday.paydate
+        if payday.paydate.year == Date.today.year
+          total += payday.amount
+        end
+      else
+        if payday.created_at.year == Date.today.year
           total += payday.amount
         end
       end
@@ -85,6 +115,25 @@ class User < ApplicationRecord
     end
     total
   end
+  def years_amount_back
+    total = 0
+    self.paydays.each do |payday|
+      if payday.paydate
+        if payday.paydate.year == Date.today.year
+          if payday.amount_back
+            total += payday.amount_back
+          end
+        end
+      else
+        if payday.created_at.year == Date.today.year
+          if payday.amount_back
+            total += payday.amount_back
+          end
+        end
+      end
+    end
+    total
+  end
 
   def total_expenditures
     total = 0
@@ -94,6 +143,21 @@ class User < ApplicationRecord
     total
   end
   def months_expenditures
+    total = 0
+    self.expenditures.each do |expenditure|
+      if expenditure.date_spent
+        if expenditure.date_spent.month == Date.today.month
+          total += expenditure.purchase_amount
+        end
+      else
+        if expenditure.created_at.month == Date.today.month
+          total += expenditure.purchase_amount
+        end
+      end
+    end
+    total
+  end
+  def years_expenditures
     total = 0
     self.expenditures.each do |expenditure|
       if expenditure.date_spent

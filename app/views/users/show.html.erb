@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='col s6 offset-s3'>
+  <div class='col s12 center'>
     <h3><%= current_user.username %>'s Profile</h3>
   </div>
 </div>
@@ -11,6 +11,7 @@
         <span class='card-title'>Miles Driven:</span>
         <p>Total miles: <%= current_user.total_miles %></p>
         <p>Months Total Miles: <%= current_user.months_miles %></p>
+        <p>Years Total Miles: <%= current_user.years_miles %></p>
       </div>
     </div>
   </div>
@@ -20,6 +21,7 @@
         <span class='card-title'>Payday Totals:</span>
         <p>Total Pay: <%= current_user.total_pay %></p>
         <p>Months Pay: <%= current_user.months_pay %></p>
+        <p>Years Pay: <%= current_user.years_pay %></p>
       </div>
   </div>
 </div>
@@ -30,6 +32,7 @@
         <span class='card-title'>Total Reimbursement:</span>
         <p>Total Reimbursement: <%= current_user.total_amount_back %></p>
         <p>Months Reimbursement: <%= current_user.months_amount_back %></p>
+        <p>Years Reimbursement: <%= current_user.years_amount_back %></p>
       </div>
     </div>
   </div>
@@ -39,6 +42,7 @@
         <span class='card-title'>Total Expenses:</span>
         <p>Total Expenses: <%= current_user.total_expenditures %></p>
         <p>Months Expenses: <%= current_user.months_expenditures %></p>
+        <p>Years Expenses: <%= current_user.years_expenditures %></p>
       </div>
     </div>
   </div>

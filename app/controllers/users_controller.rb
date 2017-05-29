@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login
   def new
     @user = User.new
   end
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_url(@user)
     else
-      redirect_to new_user_url
+      render :new
     end
   end
 

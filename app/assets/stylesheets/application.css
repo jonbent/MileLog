@@ -37,3 +37,7 @@ body {
 nav {
   background-color: #2E282A !important;
 }
+
+label {
+  color: #364652 !important;
+}

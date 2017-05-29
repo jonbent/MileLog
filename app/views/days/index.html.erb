@@ -1,7 +1,24 @@
-<h2>Your days driven</h2>
-<% current_user.days.each do |day| %>
-  <p><%= day.miles %></p>
-  <p><%= day.created_at %></p>
-  <p><%= button_to 'delete', user_day_path(current_user, day), method: :delete %></p>
-<% end %>
-<%= link_to 'New Mileage', new_user_day_url(current_user) %>
+<h5><%= current_user.username %>'s Days Driven</h5>
+<div class='row'>
+
+  <% current_user.days.each do |day| %>
+    <div class="col s12 m6">
+      <div class='card'>
+        <div class='card-content'>
+          <span class='card-title'>
+            <% if !day.date_driven %>
+              <%= day.created_at.strftime("%B %d, %Y") %>
+            <% else %>
+              <%= day.date_driven.strftime("%B %d, %Y") %>
+            <% end %>
+          </span>
+          Miles: <%= day.miles %>
+        </div>
+        <div class='card-action'>
+          <%= button_to 'delete', user_day_path(current_user, day), method: :delete, class:'btn waves-effect waves-light button' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to 'New Mileage', new_user_day_url(current_user), class: 'waves-effect waves-light btn-large wide' %>

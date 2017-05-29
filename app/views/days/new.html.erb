@@ -1,11 +1,22 @@
-<h3>Add your Mileage for Today</h3>
+<h3>Add Miles Driven</h3>
 
-<%= form_for [current_user, @day] do | f | %>
+<div class="row">
 
-<%= f.label 'Miles Driven:' %>
-<%= f.text_field :miles %>
-<br>
-<%= f.submit %>
-<% end %>
-
-<%= link_to 'cancel', user_days_path(current_user) %>
+  <%= form_for [current_user, @day], class: 'col s12' do |f| %>
+    <div class='row'>
+      <div class='input-field col s12'>
+        <%= f.label 'Miles Driven:' %>
+        <br>
+        <%= f.number_field :miles, id: 'miles', class: 'validate', placeholder: 'How Much did you drive', step: 0.01, required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label "Date Driven: (optional)" %>
+        <br>
+        <%= f.date_field :date_driven, class: 'datepicker validate', type: 'date' %>
+      </div>
+    </div>
+    <%= f.submit class:'btn waves-effect waves-light wide' %>
+  <% end %>
+</div>

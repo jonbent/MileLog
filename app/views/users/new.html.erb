@@ -28,8 +28,8 @@
       </div>
       <div class='row'>
         <div class='input-field col s12'>
+          <%= f.label :password, for: 'password' %><br>
           <%= f.password_field :password, required: true, placeholder:'Enter Password', id: 'password', class: 'validate' %>
-          <%= f.label :password, for: 'password' %>
         </div>
       </div>
       <%= f.submit class:'btn waves-effect waves-light wide' %>

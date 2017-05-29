@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #9DA2AB;
+  color: #E6FAFCl !important;
+}
+.card-content{
+  background-color: #333333;
+  color: #FFFFFF;
+}
+
+.wide{
+  width: 100%;
+  display: block;
+}
+
+.btn {
+  background-color: #595959 !important;
+}
+.btn-large {
+  background-color: #595959 !important;
+}
+
+nav {
+  background-color: #2E282A !important;
+}

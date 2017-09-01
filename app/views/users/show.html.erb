@@ -19,9 +19,9 @@
     <div class="card">
       <div class='card-content'>
         <span class='card-title'>Payday Totals:</span>
-        <p>Total Pay: <%= current_user.total_pay %></p>
-        <p>Months Pay: <%= current_user.months_pay %></p>
-        <p>Years Pay: <%= current_user.years_pay %></p>
+        <p>Total Pay: <%= sprintf "%.2f", current_user.total_pay %></p>
+        <p>Months Pay: <%= sprintf "%.2f", current_user.months_pay %></p>
+        <p>Years Pay: <%= sprintf "%.2f", current_user.years_pay %></p>
       </div>
   </div>
 </div>
@@ -30,9 +30,9 @@
     <div class="card">
       <div class='card-content'>
         <span class='card-title'>Total Reimbursement:</span>
-        <p>Total Reimbursement: <%= current_user.total_amount_back %></p>
-        <p>Months Reimbursement: <%= current_user.months_amount_back %></p>
-        <p>Years Reimbursement: <%= current_user.years_amount_back %></p>
+        <p>Total Reimbursement: <%= sprintf "%.2f", current_user.total_amount_back %></p>
+        <p>Months Reimbursement: <%= sprintf "%.2f", current_user.months_amount_back %></p>
+        <p>Years Reimbursement: <%= sprintf "%.2f", current_user.years_amount_back %></p>
       </div>
     </div>
   </div>

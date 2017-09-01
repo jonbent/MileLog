@@ -19,6 +19,13 @@ class PaydaysController < ApplicationController
     end
   end
 
+  def destroy
+    @payday = Payday.find(params[:id])
+
+    @payday.destroy
+
+    redirect_to user_paydays_path(current_user)
+  end
   private
 
   def payday_params

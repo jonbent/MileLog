@@ -3,8 +3,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
 
-  before_filter :require_login
-
+  before_action :require_login
   private
 
   def require_login
